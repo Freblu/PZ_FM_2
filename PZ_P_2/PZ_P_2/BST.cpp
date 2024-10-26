@@ -1,3 +1,4 @@
+#pragma once
 #include "BST.h"
 
 
@@ -44,6 +45,33 @@ void BST::Dodanie(int x) {
 				Loc->set_lewy(new Node(x));
 				Loc->ret_lewy()->set_lewy(temp);
 			}
+		}
+	}
+}
+
+void BST::wyp_all()
+{
+	if (root == nullptr)
+	{
+		cout << "puste drzewo";
+	}
+	else
+	{
+		cout << "lewa strona :" << endl;
+		Node* Loc = root;
+		cout << Loc->ret_data();
+		while (Loc->ret_lewy() != nullptr)
+		{
+			Loc = Loc->ret_lewy();
+			cout << Loc->ret_data() << endl;
+		}
+		cout << "prawa strona :" << endl;
+		Loc = root;
+		cout << Loc->ret_data();
+		while (Loc->ret_prawy() != nullptr)
+		{
+			Loc = Loc->ret_prawy();
+			cout << Loc->ret_data() << endl;
 		}
 	}
 }

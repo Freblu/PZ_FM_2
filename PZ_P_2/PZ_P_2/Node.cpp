@@ -1,3 +1,4 @@
+#pragma once
 #include "Node.h"
 int Node::ret_data()
 {
@@ -27,3 +28,4 @@ void Node::set_prawy(Node* x)
 {
 	prawy = x;
 }
+

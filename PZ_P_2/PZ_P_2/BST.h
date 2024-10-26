@@ -1,5 +1,5 @@
 #pragma once
-#include "Node.cpp"
+#include "Node.h"
 class BST
 {
 private:
@@ -11,6 +11,6 @@ public:
 	};
 	~BST() {};
 	void Dodanie(int x);
-	void wys_pr(void);
+	void wyp_all(void);
 };
 
