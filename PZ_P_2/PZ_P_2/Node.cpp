@@ -1,21 +1,29 @@
 #include "Node.h"
-class Node
+int Node::ret_data()
 {
-private:
-	/// zapis danych
-	int data;
-	///wskaznik lewy
-	Node* lewy;
-	/// wskaznik prawy
-	Node* prawy;
+	return data;
+}
 
-public:
+void Node::set_data(int x)
+{
+	data = x;
+}
 
-	Node(int x)
-	{
-		data = x;
-		lewy = nullptr;
-		prawy = nullptr;
-	}
-	~Node() {}
-};
+Node* Node::ret_lewy()
+{
+	return lewy;
+}
+
+Node* Node::ret_prawy()
+{
+	return prawy;
+}
+
+void Node::set_lewy(Node* x)
+{
+	lewy = x;
+}
+void Node::set_prawy(Node* x)
+{
+	prawy = x;
+}
