@@ -53,13 +53,13 @@ void BST::wyp_all()
 {
 	if (root == nullptr)
 	{
-		cout << "puste drzewo";
+		cout << "puste drzewo" << endl;
 	}
 	else
 	{
 		cout << "lewa strona :" << endl;
 		Node* Loc = root;
-		cout << Loc->ret_data();
+		cout << Loc->ret_data() << endl;
 		while (Loc->ret_lewy() != nullptr)
 		{
 			Loc = Loc->ret_lewy();
@@ -67,7 +67,7 @@ void BST::wyp_all()
 		}
 		cout << "prawa strona :" << endl;
 		Loc = root;
-		cout << Loc->ret_data();
+		cout << Loc->ret_data() << endl;
 		while (Loc->ret_prawy() != nullptr)
 		{
 			Loc = Loc->ret_prawy();

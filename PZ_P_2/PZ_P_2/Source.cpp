@@ -2,13 +2,12 @@
 int main()
 {
 	BST A;
-	A.Dodanie(1);
 
 	for (int i = 1; i < 5; i++)
 	{
 		A.Dodanie(i);
 	}
-	for (int i = -1; i < 5; i--)
+	for (int i = -1; i > -4; i--)
 	{
 		A.Dodanie(i);
 	}
