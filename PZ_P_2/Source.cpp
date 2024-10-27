@@ -14,4 +14,5 @@ int main()
 
 	A.wyp_all();
 
+     return 0;
 }
