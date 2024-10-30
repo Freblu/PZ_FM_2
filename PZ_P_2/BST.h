@@ -11,6 +11,7 @@ private:
 	 Node* dodaj(Node* node, int x);
     Node* usun(Node* node, int x);
     Node* znajdzMin(Node* node);
+	void wyczysc(Node* node);
 public:
 	BST()
 	{

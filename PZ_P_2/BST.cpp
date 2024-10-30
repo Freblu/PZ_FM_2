@@ -1,9 +1,7 @@
 #pragma once
 #include "BST.h"
 
-
-
-
+// Dodanie elemenu do drzewa
 void BST::Dodanie(int x) {
 	if (root == nullptr)
 	{
@@ -49,7 +47,7 @@ void BST::Dodanie(int x) {
 	}
 }
 
-// Usuń element z drzewa
+// Usuwanie elementu z drzewa
 void BST::Usun(int x) {
     root = usun(root, x);
 }
@@ -76,11 +74,25 @@ Node* BST::usun(Node* node, int x) {
     return node;
 }
 
+// Usuń całe drzewo
+void BST::wyczysc() {
+    wyczysc(root);
+    root = nullptr;
+}
+
+void BST::wyczysc(Node* node) {
+    if (!node) return;
+    wyczysc(node->ret_lewy());
+    wyczysc(node->ret_prawy());
+    delete node;
+}
+
 Node* BST::znajdzMin(Node* node) {
     while (node && node->ret_lewy()) node = node->ret_lewy();
     return node;
 }
 
+//wyświetlenie drzewa
 void BST::wyp_all()
 {
 	if (root == nullptr)

@@ -32,6 +32,10 @@ int main(){
                 cin >> value;
                 A.Usun(value);
                 break;
+			case 3:
+                A.wyczysc();
+                cout << "Drzewo zostało usunięte." << endl;
+                break;
 		}
      return 0;
 }

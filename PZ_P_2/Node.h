@@ -2,8 +2,7 @@
 #include <iostream>
 using namespace std;
 
-class Node
-{
+class Node{
 private:
 	/// zapis danych
 	int data;
@@ -22,6 +21,6 @@ public:
 	void set_data(int x) { data = x; }
 	Node* ret_lewy(void) { return lewy; }
 	void set_lewy(Node*) { lewy = x; }
-	Node* ret_prawy(void) { return prawy; 
+	Node* ret_prawy(void) { return prawy; }
 	void set_prawy(Node*) { prawy = x; }
 };
