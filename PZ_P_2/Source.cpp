@@ -1,18 +1,38 @@
 #include "BST.h"
-int main()
-{
-	BST A;
+#include <iostream>
+#include <vector>
+using namespace std;
 
-	for (int i = 1; i < 5; i++)
-	{
-		A.Dodanie(i);
-	}
-	for (int i = -1; i > -4; i--)
-	{
-		A.Dodanie(i);
-	}
+void menu() {
+    cout << "1. Dodaj element" << endl;
+    cout << "2. Usuń element" << endl;
+    cout << "3. Usuń całe drzewo" << endl;
+    cout << "4. Szukaj ścieżki do elementu" << endl;
+    cout << "5. Wyświetl drzewo (1-Preorder, 2-Inorder, 3-Postorder)" << endl;
+    cout << "6. Zapisz drzewo do pliku" << endl;
+    cout << "0. Wyjdź" << endl;
+}
 
-	A.wyp_all();
+int main(){
+	  BST A;
+    int option, value;
+	do {
+        menu();
+        cout << "Wybierz opcję: ";
+        cin >> option;
 
+        switch (option) {
+            case 1:
+                cout << "Podaj wartość do dodania: ";
+                cin >> value;
+                A.Dodanie(value);
+                break;
+            case 2:
+                cout << "Podaj wartość do usunięcia: ";
+                cin >> value;
+                A.Usun(value);
+                break;
+		}
      return 0;
+}
 }
