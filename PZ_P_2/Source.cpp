@@ -37,6 +37,18 @@ int main(){
                 cout << "Drzewo zostało usunięte." << endl;
                 break;
 		}
+		 case 4:
+                cout << "Podaj wartość do znalezienia: ";
+                cin >> value;
+                vector<int> path;
+                if (A.znajdzSciezke(value, path)) {
+                    cout << "Ścieżka do " << value << ": ";
+                    for (int n : path) cout << n << " ";
+                    cout << endl;
+                } else {
+                    cout << "Element nie znaleziony." << endl;
+                }
+                break;
      return 0;
 }
 }

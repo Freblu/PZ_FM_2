@@ -120,3 +120,18 @@ void BST::wyp_all()
 	}
 }
 
+// Szukaj ścieżki do elementu
+bool BST::znajdzSciezke(int x, std::vector<int>& path) {
+    return znajdzSciezke(root, x, path);
+}
+
+bool BST::znajdzSciezke(Node* node, int x, std::vector<int>& path) {
+    if (!node) return false;
+    path.push_back(node->ret_data());
+    if (node->ret_data() == x) return true;
+    if (x < node->ret_data() && znajdzSciezke(node->ret_lewy(), x, path)) return true;
+    if (x > node->ret_data() && znajdzSciezke(node->ret_prawy(), x, path)) return true;
+    path.pop_back();
+    return false;
+}
+

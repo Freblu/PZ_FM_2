@@ -12,6 +12,7 @@ private:
     Node* usun(Node* node, int x);
     Node* znajdzMin(Node* node);
 	void wyczysc(Node* node);
+	 bool znajdzSciezke(Node* node, int x, std::vector<int>& path);
 public:
 	BST()
 	{
@@ -21,6 +22,7 @@ public:
 	void Dodanie(int x);
 	void Usun(int x);
     void wyczysc();
+	bool znajdzSciezke(int x, std::vector<int>& path);
 	void wyp_all(void);
 };
 
