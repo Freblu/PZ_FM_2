@@ -11,7 +11,6 @@ public:
 	};
 	~BST() {};
 	void Dodanie(int x);
-	void wyp_all(void);
 	void c_order(void);
 	void preorder(Node* node);
 	void inorder(Node* node);

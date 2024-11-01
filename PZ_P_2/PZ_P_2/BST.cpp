@@ -64,33 +64,6 @@ void BST::Dodanie(int x) {
 	}
 }
 
-void BST::wyp_all()
-{
-	if (root == nullptr)
-	{
-		cout << "puste drzewo" << endl;
-	}
-	else
-	{
-		cout << "lewa strona :" << endl;
-		Node* Loc = root;
-		cout << Loc->ret_data() << endl;
-		while (Loc->ret_lewy() != nullptr)
-		{
-			Loc = Loc->ret_lewy();
-			cout << Loc->ret_data() << endl;
-		}
-		cout << "prawa strona :" << endl;
-		Loc = root;
-		cout << Loc->ret_data() << endl;
-		while (Loc->ret_prawy() != nullptr)
-		{
-			Loc = Loc->ret_prawy();
-			cout << Loc->ret_data() << endl;
-		}
-	}
-}
-
 void BST::preorder(Node* node)
 {
 	if (node != NULL) {
