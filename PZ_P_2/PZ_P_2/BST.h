@@ -13,8 +13,12 @@ public:
 	void Dodanie(int x);
 	void wyp_all(void);
 	void c_order(void);
-	void preorder(Node* root);
-	void inorder(Node* root);
-	void postorder(Node* root);
+	void preorder(Node* node);
+	void inorder(Node* node);
+	void postorder(Node* node);
+	void f_order(void);
+	void f_pror(Node* node, fstream& file);
+	void f_inor(Node* node, fstream& file);
+	void f_poor(Node* node, fstream& file);
 };
 

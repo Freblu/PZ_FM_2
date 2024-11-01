@@ -122,7 +122,7 @@ void BST::postorder(Node* node)
 void BST::c_order() 
 {
 	int x = 0;
-	cout << "wybierz sposob wyswietlenia\n1 - preorder\n2 - inorder\n3 - postorder\n";
+	cout << "\nwybierz sposob wyswietlenia\n1 - preorder\n2 - inorder\n3 - postorder\n";
 	cin >> x;
 	cout << "\n";
 	switch (x)
@@ -144,3 +144,73 @@ void BST::c_order()
 	}
 
 }
+
+void BST::f_order(void)
+{
+	int x = 0;
+	cout << "\nwybierz sposob zapisu do pliku\n1 - preorder\n2 - inorder\n3 - postorder\n";
+	cin >> x;
+	cout << "\n";
+	switch(x)
+	{
+	case(1):
+	{
+		fstream pre("Preorder.txt", ios::out);
+		f_pror(root, pre);
+		pre.close();
+		break;
+	}
+	case(2):
+	{
+		fstream in("Inorder.txt", ios::out);
+		f_inor(root, in);
+		in.close();
+		break;
+	}
+	case(3):
+	{
+		fstream post("Postorder.txt", ios::out);
+		f_poor(root, post);
+		post.close();
+		break;
+	}
+		default:
+		{
+			cout << "\nnie wybrano zadnej z dostepnych opcji\n";
+			break;
+		}
+	}
+}
+
+void BST::f_pror(Node* node, fstream& file)
+{
+	if (node != NULL)
+	{
+		file << node->ret_data() << " ";
+		f_pror(node->ret_lewy(), file);
+		f_pror(node->ret_prawy(), file);
+	};
+}
+
+void BST::f_inor(Node* node, fstream& file)
+{
+	if (node != NULL)
+	{
+		f_inor(node->ret_lewy(), file);
+		file << node->ret_data() << " ";
+		f_inor(node->ret_prawy(), file);
+	};
+}
+void BST::f_poor(Node* node, fstream& file)
+{
+
+	if (node != NULL)
+	{
+		f_poor(node->ret_lewy(), file);
+		f_poor(node->ret_prawy(), file);
+		file << node->ret_data() << " ";
+	};
+
+}
+
+
