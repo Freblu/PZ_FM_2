@@ -81,13 +81,6 @@ int main()
             cin >> file;
             cout << "\nplik zapisany w jêzyku binarnym, nacisnij 0\nnplik zapisany w jêzyku dziesietnym, nacisnij 1 : \n";
             cin >> x;
-
-            //!!!!!!!!!!!!!!!!TESTOWE USTAWIANIA!!!!!!!!!!!!!!!!!!!
-            file = "input.txt";
-            x = 1;
-            //!!!!!!!!!!!!!!!!TESTOWE USTWIENIA!!!!!!!!!!!!!!!!!!!!
-            //!!!!!!!!!!!!!!! USUÑ PRZED OPISEM!!!!!!!!!!!!!!!!!!!!
-
             A.f_read(file, x);
         }
         case 0:
