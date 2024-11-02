@@ -1,8 +1,11 @@
 #pragma once
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
-class Node{
+class Node
+{
 private:
 	/// zapis danych
 	int data;
