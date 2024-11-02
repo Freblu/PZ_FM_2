@@ -24,5 +24,7 @@ public:
     void wyczysc();
 	bool znajdzSciezke(int x, std::vector<int>& path);
 	void wyp_all(void);
+	void c_inorder(void);
+	void inorder(Node* root);
 };
 
