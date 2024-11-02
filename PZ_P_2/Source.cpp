@@ -1,59 +1,76 @@
+/** @file Source.cpp
+ *  @brief G≈Ç√≥wny plik programu zawierajƒÖcy funkcjƒô `main` oraz menu interakcji u≈ºytkownika z drzewem BST.
+ */
 #include "BST.h"
 
-using namespace std;
+
+/**
+ * @brief Wy≈õwietla menu opcji dla u≈ºytkownika.
+ * 
+ * Funkcja `menu` prezentuje dostƒôpne operacje na drzewie BST, takie jak dodawanie, usuwanie, wy≈õwietlanie,
+ * zapisywanie i odczyt z pliku.
+ */
 void menu() {
     BST A;
 
     cout << endl << endl << "1. Dodaj element" << endl;
-    cout << "2. UsuÒ element" << endl;
-    cout << "3. UsuÒ ca≥e drzewo" << endl;
-    cout << "4. Szukaj úcieøki do elementu" << endl;
-    cout << "5. Wyúwietl drzewo (1-Preorder, 2-Inorder, 3-Postorder)" << endl;
+    cout << "2. UsuÔøΩ element" << endl;
+    cout << "3. UsuÔøΩ caÔøΩe drzewo" << endl;
+    cout << "4. Szukaj ÔøΩcieÔøΩki do elementu" << endl;
+    cout << "5. WyÔøΩwietl drzewo (1-Preorder, 2-Inorder, 3-Postorder)" << endl;
     cout << "6. Zapisz drzewo do pliku" << endl;
     cout << "7. Wczytaj dane z pliku" << endl;
-    cout << "0. Wyjdü" << endl;
+    cout << "0. WyjdÔøΩ" << endl;
 }
-
+/**
+ * @brief G≈Ç√≥wna funkcja programu.
+ * 
+ * Funkcja `main` obs≈Çuguje logikƒô interakcji u≈ºytkownika z drzewem BST poprzez menu.
+ * Umo≈ºliwia wykonywanie operacji na drzewie, takich jak dodawanie, usuwanie, przeglƒÖdanie,
+ * zapisywanie do pliku i odczyt z pliku.
+ * 
+ * @return Zwraca 0 po zamkniƒôciu programu.
+ */
 
 int main()
 {
-    BST A;
+    BST A;///< Obiekt klasy BST reprezentujƒÖcy drzewo binarne.
 
     int option, value;
 
     do {
-        menu();
-        cout << "Wybierz opcjÍ: ";
+        menu();///< Wywo≈Çanie funkcji wy≈õwietlajƒÖcej menu.
+        cout << "Wybierz opcjÔøΩ: ";
         cin >> option;
 
         switch (option) {
         case 1:
         {
-            cout << "Podaj wartoúÊ do dodania: ";
+            cout << "Podaj wartoÔøΩÔøΩ do dodania: ";
             cin >> value;
-            A.Dodanie(value);
+            A.Dodanie(value);///< Dodaje warto≈õƒá do drzewa.
             break;
         }
         case 2:
         {
-            cout << "Podaj wartoúÊ do usuniÍcia: ";
+            cout << "Podaj wartoÔøΩÔøΩ do usuniÔøΩcia: ";
             cin >> value;
-            A.Usun(value);
+            A.Usun(value);///< Usuwa wskazanƒÖ warto≈õƒá z drzewa.
             break;
         }
         case 3:
         {
-            A.wyczysc();
-            cout << "Drzewo zosta≥o usuniÍte." << endl;
+            A.wyczysc();///< Usuwa wszystkie wƒôz≈Çy drzewa.
+            cout << "Drzewo zostaÔøΩo usuniÔøΩte." << endl;
             break;
         }
         case 4:
         {
-            cout << "Podaj wartoúÊ do znalezienia: ";
+            cout << "Podaj wartoÔøΩÔøΩ do znalezienia: ";
             cin >> value;
-            vector<int> path;
-            if (A.znajdzSciezke(value, path)) {
-                cout << "åcieøka do " << value << ": ";
+            vector<int> path;///< Wektor przechowujƒÖcy ≈õcie≈ºkƒô do znalezionego elementu
+            if (A.znajdzSciezke(value, path)) {///< Wy≈õwietla ≈õcie≈ºkƒô do elementu.
+                cout << "ÔøΩcieÔøΩka do " << value << ": ";
                 for (int n : path) cout << n << " ";
                 cout << endl;
             }
@@ -64,13 +81,13 @@ int main()
         }
         case 5:
         {
-            A.c_order();
+            A.c_order();///< Wy≈õwietla drzewo w wybranym porzƒÖdku.
             break;
 
         }
         case 6:
         {
-            A.f_order();
+            A.f_order();///< Zapisuje drzewo do pliku w wybranym porzƒÖdku
             break;
         }
         case 7:
@@ -79,9 +96,9 @@ int main()
             string file;
             cout << "\nPodaj nazwe pliku (podaj sama nazwe z formatem):\n";
             cin >> file;
-            cout << "\nplik zapisany w jÍzyku binarnym, nacisnij 0\nnplik zapisany w jÍzyku dziesietnym, nacisnij 1 : \n";
+            cout << "\nplik zapisany w jÔøΩzyku binarnym, nacisnij 0\nnplik zapisany w jÔøΩzyku dziesietnym, nacisnij 1 : \n";
             cin >> x;
-            A.f_read(file, x);
+            A.f_read(file, x);///< Wczytuje dane z pliku do drzewa.
         }
         case 0:
         {
@@ -90,10 +107,10 @@ int main()
         }
         default:
         {
-            cout << "\nNieprawid≥owa opcja. SprÛbuj ponownie." << endl;
+            cout << "\nNieprawidÔøΩowa opcja. SprÔøΩbuj ponownie." << endl;
         }
         }
-    } while (option != 0);
+    } while (option != 0);///< Kontynuuje dzia≈Çanie programu, dop√≥ki u≈ºytkownik nie wybierze opcji 0.
 
     return 0;
 }
@@ -103,13 +120,13 @@ int main()
 
 
 /* 
-na razie tyle rzeczy doda≥em, tutaj zapisuje reszte planÛw i celÛw w zadaniu i to jak je oceniam pod wzglÍdem trudnoúci, 
-tego trzeciego nie wiem czy trzeba  i nie wiem jak to zrobiÊ jeøeli tak, 
-jeøeli chcesz to moøesz to lub inne zrobiÊ a jeøeli nie to ja sprubuje rano
+na razie tyle rzeczy dodaÔøΩem, tutaj zapisuje reszte planÔøΩw i celÔøΩw w zadaniu i to jak je oceniam pod wzglÔøΩdem trudnoÔøΩci, 
+tego trzeciego nie wiem czy trzeba  i nie wiem jak to zrobiÔøΩ jeÔøΩeli tak, 
+jeÔøΩeli chcesz to moÔøΩesz to lub inne zrobiÔøΩ a jeÔøΩeli nie to ja sprubuje rano
 
 Do dodania :  
- - moøliwoúÊ zapisania w binarnym, (≥atwa-úrednie)
- - jeøeli to jak to obecnie nie liczy sie jako "graficzne wyúwietlenie" (tak jak to nazwa≥ w zadaniu) to dodaÊ graficzne wyúwietlanie
- (obecnie nie wiem jak moøna by by≥o dodπc graficzne wyúwietlanie, zak≥adam øe jest to trudne ale nie mam pojÍcia)
+ - moÔøΩliwoÔøΩÔøΩ zapisania w binarnym, (ÔøΩatwa-ÔøΩrednie)
+ - jeÔøΩeli to jak to obecnie nie liczy sie jako "graficzne wyÔøΩwietlenie" (tak jak to nazwaÔøΩ w zadaniu) to dodaÔøΩ graficzne wyÔøΩwietlanie
+ (obecnie nie wiem jak moÔøΩna by byÔøΩo dodÔøΩc graficzne wyÔøΩwietlanie, zakÔøΩadam ÔøΩe jest to trudne ale nie mam pojÔøΩcia)
   
 */
