@@ -1,24 +1,91 @@
 #include "BST.h"
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+void menu() {
+    cout << "1. Dodaj element" << endl;
+    cout << "2. UsuÅ„ element" << endl;
+    cout << "3. UsuÅ„ caÅ‚e drzewo" << endl;
+    cout << "4. Szukaj Å›cieÅ¼ki do elementu" << endl;
+    cout << "5. WyÅ›wietl drzewo (1-Preorder, 2-Inorder, 3-Postorder)" << endl;
+    cout << "6. Zapisz drzewo do pliku" << endl;
+    cout << "0. WyjdÅº" << endl;
+}
+
+
 int main()
 {
-	BST A;
-	A.f_read("bin_input.txt", 0);
-	A.c_order();
-	//A.f_order();
+	 BST A;
+    int option, value;
+
+    do {
+        menu();
+        cout << "Wybierz opcjÄ™: ";
+        cin >> option;
+
+        switch (option) {
+            case 1:
+                cout << "Podaj wartoÅ›Ä‡ do dodania: ";
+                cin >> value;
+                A.Dodanie(value);
+                break;
+            case 2:
+                cout << "Podaj wartoÅ›Ä‡ do usuniÄ™cia: ";
+                cin >> value;
+                A.Usun(value);
+                break;
+            case 3:
+                A.wyczysc();
+                cout << "Drzewo zostaÅ‚o usuniÄ™te." << endl;
+                break;
+            case 4:
+                cout << "Podaj wartoÅ›Ä‡ do znalezienia: ";
+                cin >> value;
+                vector<int> path;
+                if (A.znajdzSciezke(value, path)) {
+                    cout << "ÅšcieÅ¼ka do " << value << ": ";
+                    for (int n : path) cout << n << " ";
+                    cout << endl;
+                } else {
+                    cout << "Element nie znaleziony." << endl;
+                }
+                break;
+            case 5:
+                cout << "Podaj metodÄ™ wyÅ›wietlania (1-Preorder, 2-Inorder, 3-Postorder): ";
+                cin >> value;
+                A.wyp_all(value);
+                break;
+            case 6:
+                A.zapiszDoPliku("drzewo.txt");
+                cout << "Drzewo zapisane do pliku 'drzewo.txt'." << endl;
+                break;
+            case 0:
+                cout << "Zamykanie programu." << endl;
+                break;
+            default:
+                cout << "NieprawidÅ‚owa opcja. SprÃ³buj ponownie." << endl;
+        }
+    } while (option != 0);
+
+    return 0;
 }
 
 
 
 
+
+
 /* 
-na razie tyle rzeczy doda³em, tutaj zapisuje reszte planów i celów w zadaniu i to jak je oceniam pod wzglêdem trudnoœci, 
-tego trzeciego nie wiem czy trzeba  i nie wiem jak to zrobiæ je¿eli tak, 
-je¿eli chcesz to mo¿esz to lub inne zrobiæ a je¿eli nie to ja sprubuje rano
+na razie tyle rzeczy dodaï¿½em, tutaj zapisuje reszte planï¿½w i celï¿½w w zadaniu i to jak je oceniam pod wzglï¿½dem trudnoï¿½ci, 
+tego trzeciego nie wiem czy trzeba  i nie wiem jak to zrobiï¿½ jeï¿½eli tak, 
+jeï¿½eli chcesz to moï¿½esz to lub inne zrobiï¿½ a jeï¿½eli nie to ja sprubuje rano
 
 Do dodania :  
- - mo¿liwoœæ zapisania w binarnym, (³atwa-œrednie)
- - dodaæ menu wyoru sposobu odczytu i zapisu pliku (³atwe)
- - je¿eli to jak to obecnie nie liczy sie jako "graficzne wyœwietlenie" (tak jak to nazwa³ w zadaniu) to dodaæ graficzne wyœwietlanie
- (obecnie nie wiem jak mo¿na by by³o dod¹c graficzne wyœwietlanie, zak³adam ¿e jest to trudne ale nie mam pojêcia)
+ - moï¿½liwoï¿½ï¿½ zapisania w binarnym, (ï¿½atwa-ï¿½rednie)
+ - dodaï¿½ menu wyoru sposobu odczytu i zapisu pliku (ï¿½atwe)
+ - jeï¿½eli to jak to obecnie nie liczy sie jako "graficzne wyï¿½wietlenie" (tak jak to nazwaï¿½ w zadaniu) to dodaï¿½ graficzne wyï¿½wietlanie
+ (obecnie nie wiem jak moï¿½na by byï¿½o dodï¿½c graficzne wyï¿½wietlanie, zakï¿½adam ï¿½e jest to trudne ale nie mam pojï¿½cia)
   
 */

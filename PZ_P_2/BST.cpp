@@ -3,7 +3,7 @@
 
 
 
-
+// Dodanie elementu do drzewa
 
 void BST::Dodanie(int x) {
 	if (root == nullptr)
@@ -65,173 +65,100 @@ void BST::Dodanie(int x) {
 }
 
 
-void BST::c_order() 
-{
-	int x = 0;
-	cout << "\nwybierz sposob wyswietlenia\n1 - preorder\n2 - inorder\n3 - postorder\n";
-	cin >> x;
-	cout << "\n";
-	switch (x)
-	{
-	case(1):
-		preorder(root);
-		break;
-	case(2):
-		inorder(root);
-		break;
-	case(3):
-		postorder(root);
-		break;
-	default:
-	{
-		cout << "\nnie wybrano zadnej z dostepnych opcji\n";
-		break;
-	}
-	}
-
+// Usuniecie elementu z drzewa
+void BST::Usun(int x) {
+    root = usun(root, x);
 }
 
-void BST::preorder(Node* node)
-{
-	if (node != NULL) {
-		cout << node->ret_data() << " ";
-		preorder(node->ret_lewy());
-		preorder(node->ret_prawy());
-	}
+Node* BST::usun(Node* node, int x) {
+    if (!node) return nullptr;
+    if (x < node->ret_data()) node->set_lewy(usun(node->ret_lewy(), x));
+    else if (x > node->ret_data()) node->set_prawy(usun(node->ret_prawy(), x));
+    else {
+        if (!node->ret_lewy()) {
+            Node* rightChild = node->ret_prawy();
+            delete node;
+            return rightChild;
+        }
+        if (!node->ret_prawy()) {
+            Node* leftChild = node->ret_lewy();
+            delete node;
+            return leftChild;
+        }
+        Node* minNode = znajdzMin(node->ret_prawy());
+        node->set_data(minNode->ret_data());
+        node->set_prawy(usun(node->ret_prawy(), minNode->ret_data()));
+    }
+    return node;
 }
 
-void BST::inorder(Node* node)
-{
-	if (node != NULL) {
-		inorder(node->ret_lewy());
-		cout << node->ret_data() << " ";
-		inorder(node->ret_prawy());
-	}
+Node* BST::znajdzMin(Node* node) {
+    while (node && node->ret_lewy()) node = node->ret_lewy();
+    return node;
 }
 
-void BST::postorder(Node* node)
-{
-	if (node != NULL) {
-		postorder(node->ret_lewy());
-		postorder(node->ret_prawy());
-		cout << node->ret_data() << " ";
-	}
+// Usuniecie całego drzewa
+void BST::wyczysc() {
+    wyczysc(root);
+    root = nullptr;
 }
 
-void BST::f_order(void)
-{
-	int x = 0;
-	cout << "\nwybierz sposob zapisu do pliku\n1 - preorder\n2 - inorder\n3 - postorder\n";
-	cin >> x;
-	cout << "\n";
-	switch(x)
-	{
-	case(1):
-	{
-		fstream pre("Preorder.txt", ios::out);
-		f_pror(root, pre);
-		pre.close();
-		break;
-	}
-	case(2):
-	{
-		fstream in("Inorder.txt", ios::out);
-		f_inor(root, in);
-		in.close();
-		break;
-	}
-	case(3):
-	{
-		fstream post("Postorder.txt", ios::out);
-		f_poor(root, post);
-		post.close();
-		break;
-	}
-		default:
-		{
-			cout << "\nnie wybrano zadnej z dostepnych opcji\n";
-			break;
-		}
-	}
+void BST::wyczysc(Node* node) {
+    if (!node) return;
+    wyczysc(node->ret_lewy());
+    wyczysc(node->ret_prawy());
+    delete node;
 }
 
-void BST::f_pror(Node* node, fstream& file)
-{
-	if (node != NULL)
-	{
-		file << node->ret_data() << " ";
-		f_pror(node->ret_lewy(), file);
-		f_pror(node->ret_prawy(), file);
-	};
+// Szukanie ścieżki do elementu
+bool BST::znajdzSciezke(int x, std::vector<int>& path) {
+    return znajdzSciezke(root, x, path);
 }
 
-void BST::f_inor(Node* node, fstream& file)
-{
-	if (node != NULL)
-	{
-		f_inor(node->ret_lewy(), file);
-		file << node->ret_data() << " ";
-		f_inor(node->ret_prawy(), file);
-	};
-}
-void BST::f_poor(Node* node, fstream& file)
-{
-
-	if (node != NULL)
-	{
-		f_poor(node->ret_lewy(), file);
-		f_poor(node->ret_prawy(), file);
-		file << node->ret_data() << " ";
-	};
-
+bool BST::znajdzSciezke(Node* node, int x, std::vector<int>& path) {
+    if (!node) return false;
+    path.push_back(node->ret_data());
+    if (node->ret_data() == x) return true;
+    if (x < node->ret_data() && znajdzSciezke(node->ret_lewy(), x, path)) return true;
+    if (x > node->ret_data() && znajdzSciezke(node->ret_prawy(), x, path)) return true;
+    path.pop_back();
+    return false;
 }
 
+// Wyświetlenie drzewa
+void BST::wyp_all(int orderType) {
+    if (orderType == 1) wypiszPreorder(root);
+    else if (orderType == 2) wypiszInorder(root);
+    else wypiszPostorder(root);
+    std::cout << std::endl;
+}
 
-void BST::f_read(string fname, int x)
-{
-	fstream file2(fname, ios::in);
-	string line;
-	char c;
-	string d;
-	if (x == 1)
-	{
-		while (file2.get(c)) {
-			if (c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '0' && c != ' ')
-			{
-				cout << "blad, zle dane w pliku wejsciowym";
-				break;
-			}
-			else
-			{
-				d = d + c;
-				if (c == ' ')
-				{
-					int number = stoi(d);
-					Dodanie(number);
-					d = "";
-				}
-			}
-		}
-	}
-	else
-	{
-		while (file2.get(c)) {
-			if (c != '1' && c != '0' && c != ' ')
-			{
-				cout << "blad, zle dane w pliku wejsciowym";
-				break;
-			}
-			else
-			{
-				d = d + c;
-				if (c == ' ')
-				{
-					int number = stoi(d, 0, 2);
-					Dodanie(number);
-					d = "";
-				}
-			}
-		}
-	}
-	file2.close();
+void BST::wypiszPreorder(Node* node) {
+    if (!node) return;
+    std::cout << node->ret_data() << " ";
+    wypiszPreorder(node->ret_lewy());
+    wypiszPreorder(node->ret_prawy());
+}
+
+void BST::wypiszInorder(Node* node) {
+    if (!node) return;
+    wypiszInorder(node->ret_lewy());
+    std::cout << node->ret_data() << " ";
+    wypiszInorder(node->ret_prawy());
+}
+
+void BST::wypiszPostorder(Node* node) {
+    if (!node) return;
+    wypiszPostorder(node->ret_lewy());
+    wypiszPostorder(node->ret_prawy());
+    std::cout << node->ret_data() << " ";
+}
+
+// Zapis drzewa do pliku
+void BST::zapiszDoPliku(const std::string& filename) {
+    std::ofstream file(filename);
+    if (file.is_open()) {
+        wypiszInorder(root);
+        file.close();
+    }
 }
