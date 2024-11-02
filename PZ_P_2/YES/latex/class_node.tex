@@ -1,0 +1,154 @@
+\doxysection{Node Class Reference}
+\hypertarget{class_node}{}\label{class_node}\index{Node@{Node}}
+
+
+Klasa reprezentująca pojedynczy węzeł drzewa \doxylink{class_b_s_t}{BST}.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_node_a00b0cd3337cc135b4a2771fd16139d72}{Node}} (int x)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_node}{Node}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_node_aa0840c3cb5c7159be6d992adecd2097c}{\texorpdfstring{$\sim$}{\string~}\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{class_node}{Node}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_node_a2c3d266659be3de0522fd2610dfa421d}{ret\+\_\+data}} (void)
+\begin{DoxyCompactList}\small\item\em Zwraca wartość przechowywaną w węźle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_node_ab6905124a1c9bfb9bac6b447d4bc50ec}{set\+\_\+data}} (int x)
+\begin{DoxyCompactList}\small\item\em Ustawia nową wartość przechowywaną w węźle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_node_ac6c15eee838dfd094877bd32c0b9b527}{ret\+\_\+lewy}} (void)
+\begin{DoxyCompactList}\small\item\em Zwraca wskaźnik na lewego potomka węzła. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_node_af8610330a607907406a92ae6f5ff359b}{set\+\_\+lewy}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}x)
+\begin{DoxyCompactList}\small\item\em Ustawia wskaźnik na lewego potomka węzła. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_node_a2318134b4fbec6dc1b6738af54894a0f}{ret\+\_\+prawy}} (void)
+\begin{DoxyCompactList}\small\item\em Zwraca wskaźnik na prawego potomka węzła. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_node_a2a62b7b6060402700e57ff9822d3ee69}{set\+\_\+prawy}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}x)
+\begin{DoxyCompactList}\small\item\em Ustawia wskaźnik na prawego potomka węzła. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca pojedynczy węzeł drzewa \doxylink{class_b_s_t}{BST}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_node_a00b0cd3337cc135b4a2771fd16139d72}\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily \label{class_node_a00b0cd3337cc135b4a2771fd16139d72} 
+Node\+::\+Node (\begin{DoxyParamCaption}\item[{int}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor klasy \doxylink{class_node}{Node}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Wartość do przechowywania w węźle.\\
+\hline
+\end{DoxyParams}
+Inicjalizuje nowy węzeł, ustawiając wartość {\ttfamily data} i wskaźniki {\ttfamily lewy} oraz {\ttfamily prawy} na nullptr. \Hypertarget{class_node_aa0840c3cb5c7159be6d992adecd2097c}\index{Node@{Node}!````~Node@{\texorpdfstring{$\sim$}{\string~}Node}}
+\index{````~Node@{\texorpdfstring{$\sim$}{\string~}Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Node()}{\string~Node()}}
+{\footnotesize\ttfamily \label{class_node_aa0840c3cb5c7159be6d992adecd2097c} 
+Node\+::\texorpdfstring{$\sim$}{\string~}\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destruktor klasy \doxylink{class_node}{Node}. 
+
+W tej implementacji destruktor jest domyślnie pusty, ponieważ nie zajmuje się on usuwaniem potomków. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_node_a2c3d266659be3de0522fd2610dfa421d}\index{Node@{Node}!ret\_data@{ret\_data}}
+\index{ret\_data@{ret\_data}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{ret\_data()}{ret\_data()}}
+{\footnotesize\ttfamily \label{class_node_a2c3d266659be3de0522fd2610dfa421d} 
+int Node\+::ret\+\_\+data (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Zwraca wartość przechowywaną w węźle. 
+
+\begin{DoxyReturn}{Returns}
+Wartość {\ttfamily data}. 
+\end{DoxyReturn}
+\Hypertarget{class_node_ac6c15eee838dfd094877bd32c0b9b527}\index{Node@{Node}!ret\_lewy@{ret\_lewy}}
+\index{ret\_lewy@{ret\_lewy}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{ret\_lewy()}{ret\_lewy()}}
+{\footnotesize\ttfamily \label{class_node_ac6c15eee838dfd094877bd32c0b9b527} 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} Node\+::ret\+\_\+lewy (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Zwraca wskaźnik na lewego potomka węzła. 
+
+\begin{DoxyReturn}{Returns}
+Wskaźnik {\ttfamily lewy}. 
+\end{DoxyReturn}
+\Hypertarget{class_node_a2318134b4fbec6dc1b6738af54894a0f}\index{Node@{Node}!ret\_prawy@{ret\_prawy}}
+\index{ret\_prawy@{ret\_prawy}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{ret\_prawy()}{ret\_prawy()}}
+{\footnotesize\ttfamily \label{class_node_a2318134b4fbec6dc1b6738af54894a0f} 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} Node\+::ret\+\_\+prawy (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Zwraca wskaźnik na prawego potomka węzła. 
+
+\begin{DoxyReturn}{Returns}
+Wskaźnik {\ttfamily prawy}. 
+\end{DoxyReturn}
+\Hypertarget{class_node_ab6905124a1c9bfb9bac6b447d4bc50ec}\index{Node@{Node}!set\_data@{set\_data}}
+\index{set\_data@{set\_data}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{set\_data()}{set\_data()}}
+{\footnotesize\ttfamily \label{class_node_ab6905124a1c9bfb9bac6b447d4bc50ec} 
+void Node\+::set\+\_\+data (\begin{DoxyParamCaption}\item[{int}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia nową wartość przechowywaną w węźle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Nowa wartość do ustawienia. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_node_af8610330a607907406a92ae6f5ff359b}\index{Node@{Node}!set\_lewy@{set\_lewy}}
+\index{set\_lewy@{set\_lewy}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{set\_lewy()}{set\_lewy()}}
+{\footnotesize\ttfamily \label{class_node_af8610330a607907406a92ae6f5ff359b} 
+void Node\+::set\+\_\+lewy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia wskaźnik na lewego potomka węzła. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Wskaźnik na nowy lewy węzeł. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_node_a2a62b7b6060402700e57ff9822d3ee69}\index{Node@{Node}!set\_prawy@{set\_prawy}}
+\index{set\_prawy@{set\_prawy}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{set\_prawy()}{set\_prawy()}}
+{\footnotesize\ttfamily \label{class_node_a2a62b7b6060402700e57ff9822d3ee69} 
+void Node\+::set\+\_\+prawy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia wskaźnik na prawego potomka węzła. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Wskaźnik na nowy prawy węzeł. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_node_8h}{Node.\+h}}\item 
+\mbox{\hyperlink{_node_8cpp}{Node.\+cpp}}\end{DoxyCompactItemize}

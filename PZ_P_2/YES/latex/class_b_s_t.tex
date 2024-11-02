@@ -1,0 +1,465 @@
+\doxysection{BST Class Reference}
+\hypertarget{class_b_s_t}{}\label{class_b_s_t}\index{BST@{BST}}
+
+
+Klasa reprezentująca drzewo binarne (\doxylink{class_b_s_t}{BST}).  
+
+
+
+
+{\ttfamily \#include $<$BST.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_b_s_t_abc17123a0367c3b8ad0382eeb3ad3178}{BST}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_b_s_t}{BST}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_b_s_t_aff9c7948fbba37844d2893b920ddc238}{\texorpdfstring{$\sim$}{\string~}\+BST}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxylink{class_b_s_t}{BST}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_a8cbb8aad16be51bb241bc7ba4008689f}{Dodanie}} (int x)
+\begin{DoxyCompactList}\small\item\em Dodaje nowy element do drzewa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_ac614ff3a22d5a94328bb8cf6da3699c7}{c\+\_\+order}} (void)
+\begin{DoxyCompactList}\small\item\em Wyświetla drzewo w wybranym porządku (inorder, preorder, postorder). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_a922cc0c512c983d1e8fc0a8b19cb5087}{preorder}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}})
+\begin{DoxyCompactList}\small\item\em Rekurencyjnie wyświetla drzewo w porządku preorder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_a3fbfe84491c78417fcb267e2aadfd76e}{inorder}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}})
+\begin{DoxyCompactList}\small\item\em Rekurencyjnie wyświetla drzewo w porządku inorder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_a3b2c73042d409544ca0bf0470ff9cf8c}{postorder}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}})
+\begin{DoxyCompactList}\small\item\em Rekurencyjnie wyświetla drzewo w porządku postorder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_af21d1104df2d2e74f295a3b936dfd719}{f\+\_\+order}} (void)
+\begin{DoxyCompactList}\small\item\em Zapisuje drzewo do pliku w wybranym porządku. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_ad4a41639971b11d969dde19a7cc0f2a7}{f\+\_\+pror}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}}, fstream \&file)
+\begin{DoxyCompactList}\small\item\em Zapisuje drzewo do pliku w porządku preorder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_ada0f42e899b6764a22188d70b59896c6}{f\+\_\+inor}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}}, fstream \&file)
+\begin{DoxyCompactList}\small\item\em Zapisuje drzewo do pliku w porządku inorder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_a1569c02cbd5a0866f783d2c1dc7bda49}{f\+\_\+poor}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}}, fstream \&file)
+\begin{DoxyCompactList}\small\item\em Zapisuje drzewo do pliku w porządku postorder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_af174f0e6516ebd00109aa34d41e54a0f}{f\+\_\+read}} (string fname, int x)
+\begin{DoxyCompactList}\small\item\em Odczytuje drzewo z pliku. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_b_s_t_a03f2639e5684a0915e265be833c0e192}{usun}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}}, int x)
+\begin{DoxyCompactList}\small\item\em Usuwa węzeł o podanej wartości z drzewa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_b_s_t_aaa4ac1889abd1b22b7558f0f7993261f}{znajdz\+Min}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}})
+\begin{DoxyCompactList}\small\item\em Znajduje najmniejszy element w drzewie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_a6a5387609778172c711e462d64de08d7}{wyczysc}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}})
+\begin{DoxyCompactList}\small\item\em Usuwa wszystkie węzły z drzewa rekurencyjnie. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_s_t_a478a4a3273f0d7a95a8acc8ae91af5e8}{znajdz\+Sciezke}} (\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_b_s_t_8cpp_a0e62e115e10b40b324b69dba6036a442}{node}}, int x, std\+::vector$<$ int $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Szuka ścieżki do podanej wartości w drzewie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_ada668164236a4ed28bd08a095fd4f07e}{Usun}} (int x)
+\begin{DoxyCompactList}\small\item\em Usuwa węzeł o podanej wartości z drzewa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_s_t_a44705472e3a8a3f31ba6721de900b391}{wyczysc}} ()
+\begin{DoxyCompactList}\small\item\em Usuwa wszystkie węzły z drzewa. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_s_t_acb649e77f928a3106dbebe818259ad40}{znajdz\+Sciezke}} (int x, std\+::vector$<$ int $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Szuka ścieżki do podanej wartości w drzewie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa reprezentująca drzewo binarne (\doxylink{class_b_s_t}{BST}). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_b_s_t_abc17123a0367c3b8ad0382eeb3ad3178}\index{BST@{BST}!BST@{BST}}
+\index{BST@{BST}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{BST()}{BST()}}
+{\footnotesize\ttfamily \label{class_b_s_t_abc17123a0367c3b8ad0382eeb3ad3178} 
+BST\+::\+BST (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor klasy \doxylink{class_b_s_t}{BST}. 
+
+Inicjalizuje drzewo binarne z korzeniem ustawionym na {\ttfamily nullptr}. \Hypertarget{class_b_s_t_aff9c7948fbba37844d2893b920ddc238}\index{BST@{BST}!````~BST@{\texorpdfstring{$\sim$}{\string~}BST}}
+\index{````~BST@{\texorpdfstring{$\sim$}{\string~}BST}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BST()}{\string~BST()}}
+{\footnotesize\ttfamily \label{class_b_s_t_aff9c7948fbba37844d2893b920ddc238} 
+BST\+::\texorpdfstring{$\sim$}{\string~}\+BST (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destruktor klasy \doxylink{class_b_s_t}{BST}. 
+
+Domyślny destruktor klasy. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_b_s_t_ac614ff3a22d5a94328bb8cf6da3699c7}\index{BST@{BST}!c\_order@{c\_order}}
+\index{c\_order@{c\_order}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{c\_order()}{c\_order()}}
+{\footnotesize\ttfamily \label{class_b_s_t_ac614ff3a22d5a94328bb8cf6da3699c7} 
+void BST\+::c\+\_\+order (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Wyświetla drzewo w wybranym porządku (inorder, preorder, postorder). 
+
+Wyświetla drzewo w wybranym porządku.
+
+Użytkownik może wybrać metodę wyświetlania\+: preorder, inorder lub postorder. \Hypertarget{class_b_s_t_a8cbb8aad16be51bb241bc7ba4008689f}\index{BST@{BST}!Dodanie@{Dodanie}}
+\index{Dodanie@{Dodanie}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{Dodanie()}{Dodanie()}}
+{\footnotesize\ttfamily \label{class_b_s_t_a8cbb8aad16be51bb241bc7ba4008689f} 
+void BST\+::\+Dodanie (\begin{DoxyParamCaption}\item[{int}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Dodaje nowy element do drzewa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Wartość do dodania.\\
+\hline
+{\em x} & Wartość do dodania.\\
+\hline
+\end{DoxyParams}
+Metoda dodaje nowy element do drzewa zgodnie z zasadami \doxylink{class_b_s_t}{BST}. \texorpdfstring{$<$}{<} Tworzy nowy węzeł jako korzeń drzewa, jeśli drzewo jest puste.
+
+\texorpdfstring{$<$}{<} Zmienna pomocnicza do poruszania się po drzewie.
+
+\texorpdfstring{$<$}{<} Dodaje nowy węzeł jako prawego potomka.
+
+\texorpdfstring{$<$}{<} Przechodzi do prawego potomka.
+
+\texorpdfstring{$<$}{<} Wstawia nowy węzeł i przesuwa dotychczasowego potomka w prawo.
+
+\texorpdfstring{$<$}{<} Dodaje nowy węzeł jako lewego potomka.
+
+\texorpdfstring{$<$}{<} Przechodzi do lewego potomka.
+
+\texorpdfstring{$<$}{<} Wstawia nowy węzeł i przesuwa dotychczasowego potomka w lewo.\Hypertarget{class_b_s_t_ada0f42e899b6764a22188d70b59896c6}\index{BST@{BST}!f\_inor@{f\_inor}}
+\index{f\_inor@{f\_inor}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{f\_inor()}{f\_inor()}}
+{\footnotesize\ttfamily \label{class_b_s_t_ada0f42e899b6764a22188d70b59896c6} 
+void BST\+::f\+\_\+inor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{fstream \&}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje drzewo do pliku w porządku inorder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+{\em file} & Referencja do obiektu fstream.\\
+\hline
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+{\em file} & Referencja do obiektu fstream, do którego następuje zapis. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_b_s_t_af21d1104df2d2e74f295a3b936dfd719}\index{BST@{BST}!f\_order@{f\_order}}
+\index{f\_order@{f\_order}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{f\_order()}{f\_order()}}
+{\footnotesize\ttfamily \label{class_b_s_t_af21d1104df2d2e74f295a3b936dfd719} 
+void BST\+::f\+\_\+order (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje drzewo do pliku w wybranym porządku. 
+
+Użytkownik może wybrać sposób zapisu\+: preorder, inorder lub postorder. \texorpdfstring{$<$}{<} Zapisuje drzewo w porządku preorder.
+
+\texorpdfstring{$<$}{<} Zapisuje drzewo w porządku inorder.
+
+\texorpdfstring{$<$}{<} Zapisuje drzewo w porządku postorder.\Hypertarget{class_b_s_t_a1569c02cbd5a0866f783d2c1dc7bda49}\index{BST@{BST}!f\_poor@{f\_poor}}
+\index{f\_poor@{f\_poor}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{f\_poor()}{f\_poor()}}
+{\footnotesize\ttfamily \label{class_b_s_t_a1569c02cbd5a0866f783d2c1dc7bda49} 
+void BST\+::f\+\_\+poor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{fstream \&}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje drzewo do pliku w porządku postorder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+{\em file} & Referencja do obiektu fstream.\\
+\hline
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+{\em file} & Referencja do obiektu fstream, do którego następuje zapis. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_b_s_t_ad4a41639971b11d969dde19a7cc0f2a7}\index{BST@{BST}!f\_pror@{f\_pror}}
+\index{f\_pror@{f\_pror}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{f\_pror()}{f\_pror()}}
+{\footnotesize\ttfamily \label{class_b_s_t_ad4a41639971b11d969dde19a7cc0f2a7} 
+void BST\+::f\+\_\+pror (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{fstream \&}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje drzewo do pliku w porządku preorder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+{\em file} & Referencja do obiektu fstream.\\
+\hline
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+{\em file} & Referencja do obiektu fstream, do którego następuje zapis. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_b_s_t_af174f0e6516ebd00109aa34d41e54a0f}\index{BST@{BST}!f\_read@{f\_read}}
+\index{f\_read@{f\_read}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{f\_read()}{f\_read()}}
+{\footnotesize\ttfamily \label{class_b_s_t_af174f0e6516ebd00109aa34d41e54a0f} 
+void BST\+::f\+\_\+read (\begin{DoxyParamCaption}\item[{string}]{fname}{, }\item[{int}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Odczytuje drzewo z pliku. 
+
+Odczytuje dane z pliku i buduje drzewo \doxylink{class_b_s_t}{BST}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & Nazwa pliku. \\
+\hline
+{\em x} & Wartość kontrolna (opcjonalna).\\
+\hline
+{\em fname} & Nazwa pliku do odczytu. \\
+\hline
+{\em x} & Typ danych\+: 1 dla dziesiętnych, inny dla binarnych.\\
+\hline
+\end{DoxyParams}
+Metoda odczytuje dane z pliku i konwertuje je na wartości liczbowe, które są dodawane do drzewa. Sprawdza poprawność danych i obsługuje zarówno liczby dziesiętne, jak i binarne. \texorpdfstring{$<$}{<} Otwiera plik do odczytu
+
+\texorpdfstring{$<$}{<} Odczyt danych dziesiętnych.
+
+\texorpdfstring{$<$}{<} Odczyt danych binarnych.
+
+\texorpdfstring{$<$}{<} Konwertuje ciąg na liczbę całkowitą.
+
+\texorpdfstring{$<$}{<} Dodaje liczbę do drzewa.
+
+\texorpdfstring{$<$}{<} Zamyka plik po zakończeniu odczytu.\Hypertarget{class_b_s_t_a3fbfe84491c78417fcb267e2aadfd76e}\index{BST@{BST}!inorder@{inorder}}
+\index{inorder@{inorder}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{inorder()}{inorder()}}
+{\footnotesize\ttfamily \label{class_b_s_t_a3fbfe84491c78417fcb267e2aadfd76e} 
+void BST\+::inorder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Rekurencyjnie wyświetla drzewo w porządku inorder. 
+
+Wyświetla drzewo w porządku inorder.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Przechodzi do lewego potomka.
+
+\texorpdfstring{$<$}{<} Wyświetla wartość bieżącego węzła.
+
+\texorpdfstring{$<$}{<} Przechodzi do prawego potomka.\Hypertarget{class_b_s_t_a3b2c73042d409544ca0bf0470ff9cf8c}\index{BST@{BST}!postorder@{postorder}}
+\index{postorder@{postorder}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{postorder()}{postorder()}}
+{\footnotesize\ttfamily \label{class_b_s_t_a3b2c73042d409544ca0bf0470ff9cf8c} 
+void BST\+::postorder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Rekurencyjnie wyświetla drzewo w porządku postorder. 
+
+Wyświetla drzewo w porządku postorder.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Przechodzi do lewego potomka.
+
+\texorpdfstring{$<$}{<} Przechodzi do prawego potomka.
+
+\texorpdfstring{$<$}{<} Wyświetla wartość bieżącego węzła.\Hypertarget{class_b_s_t_a922cc0c512c983d1e8fc0a8b19cb5087}\index{BST@{BST}!preorder@{preorder}}
+\index{preorder@{preorder}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{preorder()}{preorder()}}
+{\footnotesize\ttfamily \label{class_b_s_t_a922cc0c512c983d1e8fc0a8b19cb5087} 
+void BST\+::preorder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Rekurencyjnie wyświetla drzewo w porządku preorder. 
+
+Wyświetla drzewo w porządku preorder.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Wyświetla wartość bieżącego węzła.
+
+\texorpdfstring{$<$}{<} Przechodzi do lewego potomka.
+
+\texorpdfstring{$<$}{<} Przechodzi do prawego potomka.\Hypertarget{class_b_s_t_ada668164236a4ed28bd08a095fd4f07e}\index{BST@{BST}!Usun@{Usun}}
+\index{Usun@{Usun}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{Usun()}{Usun()}}
+{\footnotesize\ttfamily \label{class_b_s_t_ada668164236a4ed28bd08a095fd4f07e} 
+void BST\+::\+Usun (\begin{DoxyParamCaption}\item[{int}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Usuwa węzeł o podanej wartości z drzewa. 
+
+Usuwa element o podanej wartości z drzewa.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Wartość do usunięcia.\\
+\hline
+{\em x} & Wartość do usunięcia.\\
+\hline
+\end{DoxyParams}
+Metoda wywołuje funkcję rekurencyjną, która usuwa węzeł i aktualizuje strukturę drzewa. \texorpdfstring{$<$}{<} Wywołuje rekurencyjną funkcję usuwania.\Hypertarget{class_b_s_t_a03f2639e5684a0915e265be833c0e192}\index{BST@{BST}!usun@{usun}}
+\index{usun@{usun}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{usun()}{usun()}}
+{\footnotesize\ttfamily \label{class_b_s_t_a03f2639e5684a0915e265be833c0e192} 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} BST\+::usun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{int}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Usuwa węzeł o podanej wartości z drzewa. 
+
+Rekurencyjna metoda usuwająca węzeł z drzewa.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+{\em x} & Wartość do usunięcia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wskaźnik na zaktualizowany węzeł.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+{\em x} & Wartość do usunięcia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca wskaźnik na zaktualizowany węzeł.
+\end{DoxyReturn}
+Usuwa węzeł, zachowując właściwości drzewa \doxylink{class_b_s_t}{BST}. Obsługuje przypadki, gdy węzeł ma jednego lub dwóch potomków. \texorpdfstring{$<$}{<} Zwraca nullptr, jeśli węzeł nie istnieje.
+
+\texorpdfstring{$<$}{<} Przechodzi do lewego poddrzewa.
+
+\texorpdfstring{$<$}{<} Przechodzi do prawego poddrzewa.
+
+\texorpdfstring{$<$}{<} Węzeł bez lewego potomka.
+
+\texorpdfstring{$<$}{<} Usuwa węzeł.
+
+\texorpdfstring{$<$}{<} Zwraca prawego potomka.
+
+\texorpdfstring{$<$}{<} Węzeł bez prawego potomka.
+
+\texorpdfstring{$<$}{<} Usuwa węzeł.
+
+\texorpdfstring{$<$}{<} Zwraca lewego potomka
+
+\texorpdfstring{$<$}{<} Kopiuje dane najmniejszego węzła.
+
+\texorpdfstring{$<$}{<} Usuwa najmniejszy węzeł z prawego poddrzewa.\Hypertarget{class_b_s_t_a44705472e3a8a3f31ba6721de900b391}\index{BST@{BST}!wyczysc@{wyczysc}}
+\index{wyczysc@{wyczysc}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{wyczysc()}{wyczysc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_b_s_t_a44705472e3a8a3f31ba6721de900b391} 
+void BST\+::wyczysc (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Usuwa wszystkie węzły z drzewa. 
+
+\Hypertarget{class_b_s_t_a6a5387609778172c711e462d64de08d7}\index{BST@{BST}!wyczysc@{wyczysc}}
+\index{wyczysc@{wyczysc}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{wyczysc()}{wyczysc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_b_s_t_a6a5387609778172c711e462d64de08d7} 
+void BST\+::wyczysc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Usuwa wszystkie węzły z drzewa rekurencyjnie. 
+
+Rekurencyjnie usuwa wszystkie węzły z drzewa.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_b_s_t_aaa4ac1889abd1b22b7558f0f7993261f}\index{BST@{BST}!znajdzMin@{znajdzMin}}
+\index{znajdzMin@{znajdzMin}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{znajdzMin()}{znajdzMin()}}
+{\footnotesize\ttfamily \label{class_b_s_t_aaa4ac1889abd1b22b7558f0f7993261f} 
+\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*} BST\+::znajdz\+Min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Znajduje najmniejszy element w drzewie. 
+
+Znajduje najmniejszy element w poddrzewie.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wskaźnik na węzeł o najmniejszej wartości. 
+\end{DoxyReturn}
+\Hypertarget{class_b_s_t_acb649e77f928a3106dbebe818259ad40}\index{BST@{BST}!znajdzSciezke@{znajdzSciezke}}
+\index{znajdzSciezke@{znajdzSciezke}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{znajdzSciezke()}{znajdzSciezke()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_b_s_t_acb649e77f928a3106dbebe818259ad40} 
+bool BST\+::znajdz\+Sciezke (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{std\+::vector$<$ int $>$ \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Szuka ścieżki do podanej wartości w drzewie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Wartość do znalezienia. \\
+\hline
+{\em path} & Wektor przechowujący ścieżkę do znalezionego węzła. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca {\ttfamily true}, jeśli ścieżka została znaleziona, w przeciwnym razie {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{class_b_s_t_a478a4a3273f0d7a95a8acc8ae91af5e8}\index{BST@{BST}!znajdzSciezke@{znajdzSciezke}}
+\index{znajdzSciezke@{znajdzSciezke}!BST@{BST}}
+\doxysubsubsection{\texorpdfstring{znajdzSciezke()}{znajdzSciezke()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_b_s_t_a478a4a3273f0d7a95a8acc8ae91af5e8} 
+bool BST\+::znajdz\+Sciezke (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{int}]{x}{, }\item[{std\+::vector$<$ int $>$ \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Szuka ścieżki do podanej wartości w drzewie. 
+
+Rekurencyjnie szuka ścieżki do podanej wartości w drzewie.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Wskaźnik na aktualny węzeł. \\
+\hline
+{\em x} & Wartość do znalezienia. \\
+\hline
+{\em path} & Wektor przechowujący ścieżkę do znalezionego węzła. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zwraca {\ttfamily true}, jeśli ścieżka została znaleziona, w przeciwnym razie {\ttfamily false}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_b_s_t_8h}{BST.\+h}}\item 
+\mbox{\hyperlink{_b_s_t_8cpp}{BST.\+cpp}}\end{DoxyCompactItemize}
