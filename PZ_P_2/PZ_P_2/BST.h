@@ -19,5 +19,6 @@ public:
 	void f_pror(Node* node, fstream& file);
 	void f_inor(Node* node, fstream& file);
 	void f_poor(Node* node, fstream& file);
+	void f_read(string fname, int x);
 };
 

@@ -64,33 +64,6 @@ void BST::Dodanie(int x) {
 	}
 }
 
-void BST::preorder(Node* node)
-{
-	if (node != NULL) {
-		cout << node->ret_data() << " ";
-		preorder(node->ret_lewy());
-		preorder(node->ret_prawy());
-	}
-}
-
-void BST::inorder(Node* node)
-{
-	if (node != NULL) {
-		inorder(node->ret_lewy());
-		cout << node->ret_data() << " ";
-		inorder(node->ret_prawy());
-	}
-}
-
-void BST::postorder(Node* node)
-{
-	if (node != NULL) {
-		postorder(node->ret_lewy());
-		postorder(node->ret_prawy());
-		cout << node->ret_data() << " ";
-	}
-}
-
 
 void BST::c_order() 
 {
@@ -116,6 +89,33 @@ void BST::c_order()
 	}
 	}
 
+}
+
+void BST::preorder(Node* node)
+{
+	if (node != NULL) {
+		cout << node->ret_data() << " ";
+		preorder(node->ret_lewy());
+		preorder(node->ret_prawy());
+	}
+}
+
+void BST::inorder(Node* node)
+{
+	if (node != NULL) {
+		inorder(node->ret_lewy());
+		cout << node->ret_data() << " ";
+		inorder(node->ret_prawy());
+	}
+}
+
+void BST::postorder(Node* node)
+{
+	if (node != NULL) {
+		postorder(node->ret_lewy());
+		postorder(node->ret_prawy());
+		cout << node->ret_data() << " ";
+	}
 }
 
 void BST::f_order(void)
@@ -187,3 +187,51 @@ void BST::f_poor(Node* node, fstream& file)
 }
 
 
+void BST::f_read(string fname, int x)
+{
+	fstream file2(fname, ios::in);
+	string line;
+	char c;
+	string d;
+	if (x == 1)
+	{
+		while (file2.get(c)) {
+			if (c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '0' && c != ' ')
+			{
+				cout << "blad, zle dane w pliku wejsciowym";
+				break;
+			}
+			else
+			{
+				d = d + c;
+				if (c == ' ')
+				{
+					int number = stoi(d);
+					Dodanie(number);
+					d = "";
+				}
+			}
+		}
+	}
+	else
+	{
+		while (file2.get(c)) {
+			if (c != '1' && c != '0' && c != ' ')
+			{
+				cout << "blad, zle dane w pliku wejsciowym";
+				break;
+			}
+			else
+			{
+				d = d + c;
+				if (c == ' ')
+				{
+					int number = stoi(d, 0, 2);
+					Dodanie(number);
+					d = "";
+				}
+			}
+		}
+	}
+	file2.close();
+}
